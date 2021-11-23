@@ -1,0 +1,30 @@
+.Navbar{
+    display: flex;
+    position: sticky;
+    left: 0;
+    height: 100vh;
+    top: 0;
+    flex-direction: column;
+    width: 15rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Navbar__link-selected{
+    background: coral;
+}
+
+NavLink{
+    width: 100%;
+}
+
+.Navbar__options{
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex__column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

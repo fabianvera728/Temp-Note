@@ -1,0 +1,11 @@
+:root{
+    --color-primary-purple: #8881d8;
+    --color-primary-gray-light: #f9f9f9;
+    --color-primary-gray-light-1: #e4e4e4;
+    --color-primary-gray-medium: #c0c0c0;
+
+
+    --border-radius-less: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-greater: 20px;
+}

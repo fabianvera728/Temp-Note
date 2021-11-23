@@ -1,0 +1,26 @@
+.Layout{
+    background: var(--color-primary-gray-light);
+    display: grid;
+    grid-template-areas: "navbar header header"
+                        "navbar conten conten"
+                        "navbar conten conten";
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: 3rem 1fr 1fr;
+}
+.Layout__navbar{
+    grid-area: navbar;
+    position: sticky;
+    top: 0;
+    background: var(--color-primary-purple);
+}
+
+.Layout__content{
+    grid-area: conten;
+    padding: 1.5rem 3rem;
+}
+.Layout__header{
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    background: chocolate;
+}

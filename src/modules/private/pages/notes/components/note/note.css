@@ -1,0 +1,6 @@
+.Note{
+    padding: .5rem 1rem;
+    border: solid 1px var(--color-primary-gray-light-1);
+    border-radius: var(--border-radius-medium);
+    box-shadow: 7px 7px 19px -6px #cdcdcd;
+}

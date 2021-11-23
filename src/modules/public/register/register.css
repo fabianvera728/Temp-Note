@@ -1,0 +1,48 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.Register__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px rgb(202, 202, 202);
+    border-radius: 10px;
+    padding: 1rem 5rem;
+}
+
+.Register__inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.Register__inputs input{
+    padding: 1rem 1rem;
+    width: 100%;
+    outline: none;
+    border: solid 2px rgb(185, 185, 185);
+    border-radius: 10px;
+}
+
+.Register__inputs input:hover{
+    outline: none;
+    border: solid 2px rgb(66, 216, 191);
+}
+
+.Register__inputs button{
+    cursor: pointer;
+    padding: 1rem 1rem;
+    width: 100%;
+    outline: none;
+    border: solid 1px rgb(185, 185, 185);
+    border-radius: 10px;
+    background: rgb(66, 216, 191);
+}
