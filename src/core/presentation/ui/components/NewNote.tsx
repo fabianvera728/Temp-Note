@@ -7,7 +7,6 @@ interface Props{
     createNote: any
 }
 
-
 const NewNote = (props: Props) => {
 
     const handleClick = () => {
