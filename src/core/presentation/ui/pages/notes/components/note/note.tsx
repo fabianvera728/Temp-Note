@@ -1,4 +1,4 @@
-import { INote } from "../../../../../core/interfaces/notes/inotes";
+import { INote } from "../../../../../../../modules/core/interfaces/notes/inotes";
 import './note.css';
 
 const Note = ({name, description, state, date}: INote) => {

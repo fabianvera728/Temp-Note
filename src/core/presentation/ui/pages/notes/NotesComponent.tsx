@@ -1,9 +1,9 @@
 import shortid from "shortid";
-import { INote } from "../../../core/interfaces/notes/inotes";
+import { INote } from "../../../../../modules/core/interfaces/notes/inotes";
 import Note from "./components/note/note";
 import "./notes.css";
-import useFilter from "../../../core/hooks/filter";
-import NOTES from "../../../core/mocks/notes";
+import useFilter from "../../../../../modules/core/hooks/filter";
+import NOTES from "../../../../../modules/core/mocks/notes";
 
 const Notes = () => {
     const notes = NOTES;

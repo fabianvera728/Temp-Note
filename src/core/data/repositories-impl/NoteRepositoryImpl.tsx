@@ -1,5 +1,5 @@
-import { NoteRepository } from "../domain/NoteRepository";
-import { Note } from "./Note";
+import { NotesRepository } from "../../domain/repository/NotesRepository";
+import { Note } from "../Note";
 
 class NoteDTO{
     id: string = '';
@@ -7,7 +7,7 @@ class NoteDTO{
     description: string = '';
 }
 
-export class NoteRepositoryImpl implements NoteRepository{
+export class NoteRepositoryImpl implements NotesRepository{
     
     storage = localStorage
 
