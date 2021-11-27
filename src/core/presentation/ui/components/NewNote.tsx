@@ -9,10 +9,6 @@ interface Props{
 
 const NewNote = (props: Props) => {
 
-    const handleClick = () => {
-        props.setActive(false);
-    }
-
     const cleanNote = () => {
         return {name: "", state: false, description: "", date: ""}
     }
@@ -21,18 +17,22 @@ const NewNote = (props: Props) => {
 
     const handleChange = (e: any) => {
         setNote({...note, [e.target.name]: e.target.value})
-        console.log(note)
     }
 
-    const submit = () => {
+    const hideModal = () => {
+        props.setActive(false);
+    }
+
+    const createNote = () => {
         props.createNote(note)
-        setNote(cleanNote)
+        setNote(cleanNote())
+        hideModal()
     }
 
     return(
         <div>
             <div className={`modal ${ props.active ? "is-active": ""}`}>
-                <div className="modal-background"/>
+                <div onClick={hideModal} className="modal-background"/>
                 <div className="modal-content">
                     <div className="card p-4">
                         <div className="field">
@@ -59,10 +59,10 @@ const NewNote = (props: Props) => {
                                     placeholder="e.g. alexsmith@gmail.com"/>
                             </div>
                         </div>
-                        <button className="button is-outlined" onClick={submit}>Agregar</button>
+                        <button className="button is-outlined" onClick={createNote}>Agregar</button>
                     </div>
                 </div>
-                <button className="modal-close is-large" onClick={handleClick} aria-label="close"/>
+                <button className="modal-close is-large" onClick={hideModal} aria-label="close"/>
             </div>
         </div>
     )
