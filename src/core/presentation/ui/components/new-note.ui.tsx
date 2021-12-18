@@ -1,37 +1,17 @@
-import {useState} from "react";
 import {INote} from "../../../../modules/core/interfaces/notes/inotes";
 
 interface Props{
     active: boolean,
-    setActive: any,
-    createNote: any
+    createNote: any,
+    handleChange: any,
+    hideModal: any,
+    note: INote,
 }
 
-const NewNote = (props: Props) => {
-
-    const cleanNote = (): INote =>  {
-        return {name: "", state: false, description: "", date: ""}
-    }
-
-    const [note, setNote] = useState<INote>(cleanNote);
-
-    const handleChange = (e: any) => {
-        setNote({...note, [e.target.name]: e.target.value})
-    }
-
-    const hideModal = () => {
-        props.setActive(false);
-    }
-
-    const createNote = () => {
-        props.createNote(note)
-        setNote(cleanNote())
-        hideModal()
-    }
-
+const NewNoteUI = ({active, createNote, hideModal, note, handleChange }: Props) => {
     return(
         <div>
-            <div className={`modal ${ props.active ? "is-active": ""}`}>
+            <div className={`modal ${ active ? "is-active": ""}`}>
                 <div onClick={hideModal} className="modal-background"/>
                 <div className="modal-content">
                     <div className="card p-4">
@@ -68,4 +48,4 @@ const NewNote = (props: Props) => {
     )
 }
 
-export default NewNote;
+export default NewNoteUI;

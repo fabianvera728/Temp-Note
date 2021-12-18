@@ -12,13 +12,16 @@ export class NoteRepositoryImpl implements NotesRepository{
     storage = localStorage
 
     getNotes(): Note[] {
-        throw new Error("Method not implemented.");
+        const notes = this.storage.getItem('notes')
+        console.log(notes)
+        return [];
     }
     getNote(id: string): Note {
         throw new Error("Method not implemented.");
     }
-    postNote(note: Note): void {
-        throw new Error("Method not implemented.");
+    createNote(note: Note): void {
+        const notes = this.storage.getItem('notes')
+        this.storage.setItem('notes',"newnote")
     }
     deleteNote(id: string): void {
         throw new Error("Method not implemented.");
