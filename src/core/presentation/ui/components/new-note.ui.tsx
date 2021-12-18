@@ -9,7 +9,7 @@ interface Props{
 
 const NewNote = (props: Props) => {
 
-    const cleanNote = () => {
+    const cleanNote = (): INote =>  {
         return {name: "", state: false, description: "", date: ""}
     }
 
