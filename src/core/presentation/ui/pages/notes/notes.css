@@ -1,5 +1,13 @@
 .Notes{
-    background: var(--color-primary-gray-light);
+    background: var(--color-primary-white);
+}
+
+.Notes__sidebar{
+    padding-right: 3rem;
+}
+
+.Notes__sidebar-note{
+    
 }
 
 
@@ -8,3 +16,4 @@
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(min(9rem, 12rem), 1fr));
 }
+

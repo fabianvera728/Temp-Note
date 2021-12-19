@@ -1,29 +1,79 @@
-import React from "react";
-import './navbar.css'
+import "./navbar.css";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faList,
+  faProjectDiagram,
+  faIdBadge,
+  faQuestion,
+  faSlidersH,
+} from "@fortawesome/free-solid-svg-icons";
+import { faStickyNote } from "@fortawesome/free-regular-svg-icons";
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
-      <div className="d-flex__column">
-        <div className="">
-          Avatar
-        </div>
-        <NavLink activeClassName="Navbar__link-selected" to="/overviews">Overview</NavLink>
-        <NavLink activeClassName="Navbar__link-selected" to="/tasks">Task</NavLink>
-        <NavLink activeClassName="Navbar__link-selected" to="/documents">Documents</NavLink>
-        <NavLink activeClassName="Navbar__link-selected" to="/notes">Notes</NavLink>
-        <NavLink activeClassName="Navbar__link-selected" to="/output">Output</NavLink>
-        <NavLink activeClassName="Navbar__link-selected" to="/support">Support</NavLink>
+    <div
+      className="Navbar is-flex 
+      is-flex-direction-column 
+      is-justify-content-space-between
+      is-align-items-flex-start"
+    >
+      <div className="Navbar__avatar">tempNote</div>
+      <div className="d-flex__column is-flex is-flex-direction-column">
+        <NavLink
+          className="Navbar__link"
+          activeClassName="Navbar__link-selected"
+          to="/notes"
+        >
+          <FontAwesomeIcon icon={faStickyNote} />
+          <span> Notas</span>
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          activeClassName="Navbar__link-selected"
+          to="/tasks"
+        >
+          <FontAwesomeIcon icon={faList} />
+          <span> Tareas</span>
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          activeClassName="Navbar__link-selected"
+          to="/overviews"
+        >
+          <FontAwesomeIcon icon={faProjectDiagram} />
+          <span> Projectos</span>
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          activeClassName="Navbar__link-selected"
+          to="/support"
+        >
+          <FontAwesomeIcon icon={faIdBadge} />
+          <span> Contacto</span>
+          
+        </NavLink>
+        <NavLink
+          className="Navbar__link"
+          activeClassName="Navbar__link-selected"
+          to="/about"
+        >
+          <FontAwesomeIcon icon={faQuestion} />
+          <span> About</span>
+        </NavLink>
       </div>
-      <div className="d-flex__column">
-        <span>Projects</span>
-        <span>Bussines</span>
-        <span>Personal</span>
-        <span>Add new</span>
+      <div className="d-flex__column is-flex is-flex-direction-column">
+        <NavLink
+          className="Navbar__link"
+          activeClassName="Navbar__link-selected"
+          to="/settings"
+        >
+          <FontAwesomeIcon icon={faSlidersH} />
+          <span> Preferencias</span>
+        </NavLink>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Navbar;

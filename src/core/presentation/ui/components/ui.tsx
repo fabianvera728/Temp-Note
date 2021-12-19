@@ -1,14 +1,6 @@
-import {INote} from "../../../../modules/core/interfaces/notes/inotes";
+import { PropsNewNoteUi } from "./props";
 
-interface Props{
-    active: boolean,
-    createNote: any,
-    handleChange: any,
-    hideModal: any,
-    note: INote,
-}
-
-const NewNoteUI = ({active, createNote, hideModal, note, handleChange }: Props) => {
+const NewNoteUI = ({active, createNote, hideModal, note, handleChange }: PropsNewNoteUi) => {
     return(
         <div>
             <div className={`modal ${ active ? "is-active": ""}`}>

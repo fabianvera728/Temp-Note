@@ -1,43 +1,38 @@
-import {INote} from "../../../../modules/core/interfaces/notes/inotes";
-import {useState} from "react";
-import NewNoteUI  from "./new-note.ui";
+import { INote } from "../../../../modules/core/interfaces/notes/inotes";
+import { useState } from "react";
+import NewNoteUI from "./ui";
+import {PropsNewNote} from "./props";
 
-interface Props{
-    active: boolean,
-    setActive: any,
-    createNote: any
-}
+const NewNote = ({ active, setActive, createNote }: PropsNewNote) => {
+  const cleanNote = (): INote => {
+    return { name: "", state: false, description: "", date: "" };
+  };
 
-const NewNote = (props: Props) => {
-    const cleanNote = (): INote =>  {
-        return {name: "", state: false, description: "", date: ""}
-    }
+  const [note, setNote] = useState<INote>(cleanNote);
 
-    const [note, setNote] = useState<INote>(cleanNote);
+  const handleChange = (e: any) => {
+    setNote({ ...note, [e.target.name]: e.target.value });
+  };
 
-    const handleChange = (e: any) => {
-        setNote({...note, [e.target.name]: e.target.value})
-    }
+  const hideModal = () => {
+    setActive(false);
+  };
 
-    const hideModal = () => {
-        props.setActive(false);
-    }
+  const create = () => {
+    createNote(note);
+    setNote(cleanNote());
+    hideModal();
+  };
 
-    const createNote = () => {
-        props.createNote(note)
-        setNote(cleanNote())
-        hideModal()
-    }
-
-    return (
-        <NewNoteUI
-            active={props.active}
-            createNote={createNote}
-            handleChange={handleChange}
-            hideModal={hideModal}
-            note={note}/>
-    )
-
-}
+  return (
+    <NewNoteUI
+      active={active}
+      createNote={create}
+      handleChange={handleChange}
+      hideModal={hideModal}
+      note={note}
+    />
+  );
+};
 
 export default NewNote;
